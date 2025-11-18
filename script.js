@@ -1,6 +1,9 @@
-// Data Kamus Sederhana (Kata Inggris sebagai Kunci)
+// Data Kamus Utama (Inggris : Indonesia)
+// Anda dapat menyalin dan menempelkan ribuan pasangan kata di dalam objek ini.
 const dictionary = {
-    // Inggris : Indonesia
+    // FORMAT: "kata_inggris": "kata_indonesia",
+
+    // --- Contoh Kosakata Dasar (Bisa Dihapus/Diubah) ---
     "hello": "halo",
     "cat": "kucing",
     "dog": "anjing",
@@ -10,7 +13,56 @@ const dictionary = {
     "book": "buku",
     "computer": "komputer",
     "happy": "bahagia",
-    "friend": "teman"
+    "friend": "teman",
+    "go": "pergi",
+    "eat": "makan",
+    "sleep": "tidur",
+    "work": "kerja",
+    "school": "sekolah",
+    "city": "kota",
+    "country": "negara",
+    "beautiful": "indah",
+    "big": "besar",
+    "small": "kecil",
+    "yesterday": "kemarin",
+    "tomorrow": "besok",
+    // ----------------------------------------------------
+
+    // --- TEMPAT ANDA MEMASUKKAN KOSAKATA BARU ---
+    "run": "lari",
+    "jump": "lompat",
+    "speak": "berbicara",
+    "listen": "mendengarkan",
+    "write": "menulis",
+    "read": "membaca",
+    "mountain": "gunung",
+    "river": "sungai",
+    "flower": "bunga",
+    "tree": "pohon",
+    "sun": "matahari",
+    "moon": "bulan",
+    "star": "bintang",
+    "love": "cinta",
+    "hate": "benci",
+    "know": "tahu",
+    "learn": "belajar",
+    "teach": "mengajar",
+    "family": "keluarga",
+    "mother": "ibu",
+    "father": "ayah",
+    "sister": "saudara perempuan",
+    "brother": "saudara laki-laki",
+    "time": "waktu",
+    "money": "uang",
+    "job": "pekerjaan",
+    "music": "musik",
+    "movie": "film",
+    "game": "permainan",
+    "door": "pintu",
+    "window": "jendela",
+    "table": "meja",
+    "chair": "kursi",
+    // Tambahkan lebih banyak di sini...
 };
 
 // Fungsi untuk membalikkan kamus (Indonesia : Inggris)
@@ -59,7 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Fungsi Pencarian Utama
 function searchDictionary() {
-    const searchTerm = searchInput.value.toLowerCase().trim();
+    // Mengubah input menjadi lowercase dan menghapus spasi di awal/akhir
+    const searchTerm = searchInput.value.toLowerCase().trim(); 
     let currentDict;
     let fromLang, toLang;
 
@@ -85,6 +138,7 @@ function searchDictionary() {
 
     // 3. Tampilkan hasil
     if (translation) {
+        // Tampilkan hasil dengan bold
         resultsDiv.innerHTML = `
             <div class="result-item">
                 Dari **${fromLang}**: **${searchTerm}**<br>
@@ -92,6 +146,7 @@ function searchDictionary() {
             </div>
         `;
     } else {
+        // Tampilkan pesan jika tidak ditemukan
         resultsDiv.innerHTML = `
             <p class="placeholder">Kata "**${searchTerm}**" tidak ditemukan dalam kamus ${fromLang} → ${toLang} ini.</p>
         `;
