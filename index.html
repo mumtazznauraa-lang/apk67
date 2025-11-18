@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamus Dwi Bahasa Sederhana</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Kamus Dwi Bahasa</h1>
+        
+        <div class="direction-toggle">
+            <label>
+                <input type="radio" name="direction" value="en-id" checked>
+                Inggris → Indonesia
+            </label>
+            <label>
+                <input type="radio" name="direction" value="id-en">
+                Indonesia → Inggris
+            </label>
+        </div>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Ketik kata untuk mencari..." onkeyup="searchDictionary()">
+        </div>
+
+        <div id="results">
+            <p class="placeholder">Hasil terjemahan akan muncul di sini.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
